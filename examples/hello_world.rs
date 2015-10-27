@@ -3,7 +3,6 @@ extern crate glium_text;
 extern crate cgmath;
 
 use std::thread;
-use cgmath::FixedArray;
 use glium::Surface;
 use glium::glutin;
 
@@ -31,7 +30,7 @@ fn main() {
 
         let mut target = display.draw();
         target.clear_color(0.0, 0.0, 0.0, 1.0);
-        glium_text::draw(&text, &system, &mut target, matrix.into_fixed(), (1.0, 1.0, 0.0, 1.0));
+        glium_text::draw(&text, &system, &mut target, matrix, (1.0, 1.0, 0.0, 1.0));
         target.finish().unwrap();
 
         thread::sleep_ms(17);
